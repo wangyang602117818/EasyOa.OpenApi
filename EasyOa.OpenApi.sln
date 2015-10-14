@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyOa.OpenApi", "EasyOa.OpenApi\EasyOa.OpenApi.csproj", "{1A1F9D85-8349-4CBB-AA1F-4DA6A6A47951}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyOa.Model", "EasyOa.Model\EasyOa.Model.csproj", "{61EA6AF3-65DD-4A24-9B06-232D164981EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyOa.Common", "EasyOa.Common\EasyOa.Common.csproj", "{0EB2687E-21AF-478F-8201-09B709A45F7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{1A1F9D85-8349-4CBB-AA1F-4DA6A6A47951}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A1F9D85-8349-4CBB-AA1F-4DA6A6A47951}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A1F9D85-8349-4CBB-AA1F-4DA6A6A47951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EA6AF3-65DD-4A24-9B06-232D164981EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EA6AF3-65DD-4A24-9B06-232D164981EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EA6AF3-65DD-4A24-9B06-232D164981EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EA6AF3-65DD-4A24-9B06-232D164981EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB2687E-21AF-478F-8201-09B709A45F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB2687E-21AF-478F-8201-09B709A45F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB2687E-21AF-478F-8201-09B709A45F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB2687E-21AF-478F-8201-09B709A45F7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
