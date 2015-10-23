@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+using EasyOa.Common;
+using EasyOa.Model;
+using EasyOa.OpenApi.Models;
 
 namespace EasyOa.OpenApi
 {
@@ -15,10 +19,12 @@ namespace EasyOa.OpenApi
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
+            //访问日志
+            LogHelper.InfoLog("请求:[" + actionContext.Request.RequestUri.AbsoluteUri + "],参数:" + JsonSerializerHelper.Serialize(actionContext.ActionArguments));
             List<string> valid_result = CheckParams(actionContext.ActionArguments);
             if (valid_result.Count > 0)
             {
-                throw new ApiException<ErrorCode.General>(ErrorCode.General.invalid_params, valid_result);
+                throw new ParamsException<ErrorCode.General>(ErrorCode.General.invalid_params, valid_result);
             }
         }
         //传入请求参数，返回不合法的参数列表
@@ -30,6 +36,16 @@ namespace EasyOa.OpenApi
                 if (keyValuePair.Value == null) invalid_params.Add(keyValuePair.Key);
             }
             return invalid_params;
+        }
+        public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
+        {
+            if (actionExecutedContext.Response != null)
+            {
+                var httpContext = (actionExecutedContext.Response.Content as ObjectContent).Value;
+                LogHelper.InfoLog("响应:" + JsonSerializerHelper.Serialize(httpContext));
+            }
+            //返回日志
+            
         }
     }
 }

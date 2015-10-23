@@ -5,11 +5,16 @@ using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using System.Web.Http.ModelBinding;
+using EasyOa.Common;
 
 namespace EasyOa.OpenApi
 {
     public class ValidateModelStateAttribute : ActionFilterAttribute
     {
+        /// <summary>
+        /// 检测ModelState,对mvc框架自动Model验证以后的结果进行分析
+        /// </summary>
+        /// <param name="actionContext"></param>
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
             List<string> valid_result = new List<string>();
@@ -19,9 +24,9 @@ namespace EasyOa.OpenApi
                 {
                     if (item.Value.Errors.Count > 0) valid_result.Add(item.Value.Errors[0].ErrorMessage);
                 }
-                throw new ApiException<ErrorCode.General>(ErrorCode.General.invalid_params, valid_result);
+                throw new ParamsException<ErrorCode.General>(ErrorCode.General.params_valid_fault, valid_result);
             }
-
         }
+
     }
 }

@@ -15,7 +15,7 @@ namespace EasyOa.OpenApi.Models
         [MaxLength(10, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(Resources))]
         public string Name { get; set; }
 
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources))]
+        //[Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources))]
         [Range(10, 100, ErrorMessageResourceName = "Range", ErrorMessageResourceType = typeof(Resources))]
         public int? Age { get; set; }
     }

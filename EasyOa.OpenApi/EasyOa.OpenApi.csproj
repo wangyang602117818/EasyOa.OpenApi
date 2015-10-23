@@ -118,14 +118,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ApiResponse.cs" />
+    <Compile Include="Exception\SysException.cs" />
+    <Compile Include="Filters\MyExceptionFilterAttribute.cs" />
+    <Compile Include="Filters\MyHandleErrorAttribute.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Exception\ApiException.cs" />
+    <Compile Include="Exception\ParamsException.cs" />
     <Compile Include="Exception\ErrorCode.cs" />
     <Compile Include="Filters\CheckParamsForNullAttribute.cs" />
     <Compile Include="Filters\ValidateModelStateAttribute.cs" />

@@ -10,15 +10,11 @@ namespace EasyOa.OpenApi.Models
     /// api响应类
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ApiResponse<T>
+    public class ResponseModel<T>
     {
-        public ResponseCode code { get; set; }
+        public Enum code { get; set; }
         public string msg { get { return code.ToString(); } }
         public T result { get; set; }
     }
-    public enum ResponseCode
-    {
-        success = 0,
-        record_not_exist = 1
-    }
+   
 }

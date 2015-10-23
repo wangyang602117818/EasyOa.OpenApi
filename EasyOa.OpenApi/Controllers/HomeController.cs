@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EasyOa.Common;
+using EasyOa.OpenApi.Models;
 
 namespace EasyOa.OpenApi.Controllers
 {
@@ -11,7 +12,6 @@ namespace EasyOa.OpenApi.Controllers
     {
         public ActionResult Index()
         {
-            
             return View();
         }
     }

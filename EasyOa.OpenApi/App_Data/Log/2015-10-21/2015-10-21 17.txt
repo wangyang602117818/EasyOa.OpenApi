@@ -1,0 +1,6 @@
+2015-10-21 17:34:05,207 [INFO]=========
+   访问:[http://localhost:40180/api/File/Md5/?code=123],参数:{"code":"123"}
+2015-10-21 17:34:05,470 [INFO]=========
+   返回:{"code":100,"msg":"record_not_exist","result":null}
+2015-10-21 17:46:34,438 [INFO]=========
+   请求:[http://localhost:40180/api/File/Md5/?code=123],参数:{"code":"123"}

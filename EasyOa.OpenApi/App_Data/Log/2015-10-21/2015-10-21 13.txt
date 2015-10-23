@@ -1,0 +1,10 @@
+2015-10-21 13:38:01,177 [INFO]=========
+   访问接口:[http://localhost:40180/api/File/M1],参数:{"person":{"Name":"zs","Age":12}}
+2015-10-21 13:38:01,211 [INFO]=========
+   111
+2015-10-21 13:44:59,158 [INFO]=========
+   访问:[http://localhost:40180/api/File/M1],参数:{"person":{"Name":"zs","Age":12}}
+2015-10-21 13:55:09,000 [INFO]=========
+   访问:[http://localhost:40180/api/File/M1],参数:{"person":{"Name":"zs","Age":12}}
+2015-10-21 13:57:59,672 [INFO]=========
+   访问:[http://localhost:40180/api/File/M1],参数:{"person":{"Name":"zs2","Age":12}}
