@@ -41,8 +41,8 @@ namespace EasyOa.OpenApi
 
         public enum System
         {
-            server_exception = 1000,
-            unknow_error = 1001,
+            server_exception = -1000,
+            unknow_error = -1001,
         }
     }
 }

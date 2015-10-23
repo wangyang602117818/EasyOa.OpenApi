@@ -25,8 +25,6 @@ namespace EasyOa.OpenApi.Controllers
         [HttpGet]
         public ResponseModel<WebFile> Md5(string code)
         {
-            int a = 1, b = 0;
-            int c = a / b;
             WebFile file = WebFile.Instance().GetByMd5(code);  //查询出file
             if (file == null) return new ResponseModel<WebFile>() { code = ErrorCode.General.record_not_exist };
             return new ResponseModel<WebFile>() { code = ErrorCode.General.success, result = file };

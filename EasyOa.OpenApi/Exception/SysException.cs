@@ -12,7 +12,6 @@ namespace EasyOa.OpenApi.Exception
 {
     public class SysException<T> : HttpResponseException
     {
-        public ContentResult Content { get; set; }
         public SysException(T code, string msg, HttpStatusCode statusCode = HttpStatusCode.BadRequest)
             : base(statusCode)
         {
@@ -20,9 +19,10 @@ namespace EasyOa.OpenApi.Exception
             {
                 url = HttpContext.Current.Request.Url.AbsoluteUri,
                 code = code,
-                msg = msg
+                msg = code.ToString(),
+                extra = msg
             };
-            Content = new ContentResult() { Content = JsonSerializerHelper.Serialize(error) };
+            Response.Content = new StringContent(JsonSerializerHelper.Serialize(error));
         }
     }
 }
