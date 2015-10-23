@@ -20,7 +20,7 @@ namespace EasyOa.OpenApi.Exception
                 url = HttpContext.Current.Request.Url.AbsoluteUri,
                 code = code,
                 msg = code.ToString(),
-                extra = msg
+                result = msg
             };
             Response.Content = new StringContent(JsonSerializerHelper.Serialize(error));
         }

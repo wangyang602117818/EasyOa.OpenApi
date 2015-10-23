@@ -17,7 +17,7 @@ namespace EasyOa.OpenApi
                   {
                       url = HttpContext.Current.Request.Url.AbsoluteUri,
                       code = code,
-                      msg = code + "[" + string.Join(",", param_name) + "]"
+                      msg = code + "[" + string.Join(",", param_name) + "]",
                   };
             Response.Content = new StringContent(JsonSerializerHelper.Serialize(error));
         }
