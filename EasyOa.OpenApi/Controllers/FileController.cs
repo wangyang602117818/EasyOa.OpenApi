@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Web;
 using System.Web.Http;
 using EasyOa.Common;
@@ -54,9 +55,11 @@ namespace EasyOa.OpenApi.Controllers
             webFile.Id = webFile.Insert();
             return new ResponseModel<WebFile>() { code = ErrorCode.General.success, result = webFile };
         }
-        [HttpPost]
-        public Person M1(Person person)
+        [HttpGet]
+        public Person M1()
         {
+            Person person=new Person(){Name = "张三",Age = 12};
+            Thread.Sleep(2000);
             person.Age += 10;
             return person;
         }
