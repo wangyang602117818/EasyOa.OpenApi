@@ -15,9 +15,10 @@ namespace EasyOa.OpenApi.Controllers
     {
         public ActionResult Index()
         {
-            In();
+            //In();
 
-            LogDequeue<Person>.DoDequeue(ConsumeMessage);
+            //LogDequeue<Person>.DoDequeue(ConsumeMessage);
+            //LogHelper.MailLog(new System.Exception("sdsfds"));
 
             return View();
         }
