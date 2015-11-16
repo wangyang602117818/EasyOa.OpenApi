@@ -15,12 +15,12 @@ namespace EasyOa.OpenApi.Controllers
     {
         public ActionResult Index()
         {
-            //In();
+            In();
 
             //LogDequeue<Person>.DoDequeue(ConsumeMessage);
             //LogHelper.MailLog(new System.Exception("sdsfds"));
 
-            LogHelper.InfoLog("avc");
+
             return View();
         }
         public bool ConsumeMessage(Person person)
@@ -29,30 +29,31 @@ namespace EasyOa.OpenApi.Controllers
             LogHelper.InfoLog(str);
             if (person.Age == 12)
             {
-                
+
             }
             return true;
         }
         public void In()
         {
-            //Person p = new Person()
-            //    {
-            //        Age = 12,
-            //        Name = "张三"
-            //    };
-            Person1 p1 = new Person1()
-                {
-                    A = 10,
-                    N = "asv"
-                };
-            for (int i = 0; i < 1; i++)
+            List<Person> list = new List<Person>();
+            for (int i = 0; i < 10; i++)
             {
-                //if (i % 2 == 0)
-                //    LogEnqueue.Enqueue(p);
-                //else
-                //{
-                    LogEnqueue.Enqueue(p1);
-                //}
+                Person p = new Person()
+               {
+                   Age = i,
+                   Name = "张三" + i
+               };
+                list.Add(p);
+            }
+
+            //Person1 p1 = new Person1()
+            //    {
+            //        A = 10,
+            //        N = "asv"
+            //    };
+            foreach (Person person in list)
+            {
+                LogEnqueue.Enqueue(person);
             }
         }
     }

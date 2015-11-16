@@ -7,6 +7,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using EasyOa.Common;
+
 namespace EasyOa.OpenApi
 {
     // 注意: 有关启用 IIS6 或 IIS7 经典模式的说明，
@@ -24,7 +26,7 @@ namespace EasyOa.OpenApi
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //log4net配置文件
-            log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("bin\\log4net.config")));
+            log4net.Config.XmlConfigurator.Configure(new FileInfo(AppConfig.BasePath + "bin\\log4net.config"));
         }
     }
 }
