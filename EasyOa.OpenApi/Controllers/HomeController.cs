@@ -20,6 +20,7 @@ namespace EasyOa.OpenApi.Controllers
             //LogDequeue<Person>.DoDequeue(ConsumeMessage);
             //LogHelper.MailLog(new System.Exception("sdsfds"));
 
+            LogHelper.InfoLog("avc");
             return View();
         }
         public bool ConsumeMessage(Person person)
