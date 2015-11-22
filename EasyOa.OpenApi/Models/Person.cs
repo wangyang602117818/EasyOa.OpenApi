@@ -19,4 +19,9 @@ namespace EasyOa.OpenApi.Models
         [Range(10, 100, ErrorMessageResourceName = "Range", ErrorMessageResourceType = typeof(Resources))]
         public int? Age { get; set; }
     }
+    public class Person1
+    {
+        public string N { get; set; }
+        public int A { get; set; }
+    }
 }

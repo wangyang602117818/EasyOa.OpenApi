@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using EasyOa.Common;
 using EasyOa.OpenApi.Models;
+using System.Text;
 
 namespace EasyOa.OpenApi.Controllers
 {
@@ -12,7 +15,13 @@ namespace EasyOa.OpenApi.Controllers
     {
         public ActionResult Index()
         {
+            
+
+
             return View();
         }
+        
+       
     }
+
 }
