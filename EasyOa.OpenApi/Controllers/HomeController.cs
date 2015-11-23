@@ -16,12 +16,10 @@ namespace EasyOa.OpenApi.Controllers
         public ActionResult Index()
         {
             
-
-
             return View();
         }
-        
-       
+
+
     }
 
 }
