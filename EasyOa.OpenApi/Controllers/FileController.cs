@@ -11,7 +11,6 @@ using System.Web.Http;
 using EasyOa.Common;
 using EasyOa.Model;
 using EasyOa.OpenApi.Models;
-using EasyOa.OpenApi.Properties;
 using Newtonsoft.Json;
 
 namespace EasyOa.OpenApi.Controllers
@@ -55,13 +54,6 @@ namespace EasyOa.OpenApi.Controllers
             webFile.Id = webFile.Insert();
             return new ResponseModel<WebFile>() { code = ErrorCode.General.success, result = webFile };
         }
-        [HttpGet]
-        public Person M1()
-        {
-            Person person=new Person(){Name = "张三",Age = 12};
-            Thread.Sleep(2000);
-            person.Age += 10;
-            return person;
-        }
+        
     }
 }

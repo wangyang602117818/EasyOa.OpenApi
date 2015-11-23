@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using EasyOa.OpenApi.Properties;
+using EasyOa.Common.Properties;
 
 namespace EasyOa.OpenApi.Models
 {

@@ -18,8 +18,12 @@ namespace EasyOa.OpenApi.Filters
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
             //记录错误日志
-            LogHelper.ErrorLog(actionExecutedContext.Exception);
-            throw new SysException<ErrorCode.System>(ErrorCode.System.server_exception, actionExecutedContext.Exception.Message);
+            if (!actionExecutedContext.Exception.GetType().Name.Contains("ParamsException"))
+            {
+                LogHelper.ErrorLog(actionExecutedContext.Exception);
+                throw new SysException<ErrorCode.System>(ErrorCode.System.server_exception,
+                                                         actionExecutedContext.Exception.Message);
+            }
         }
     }
 }
