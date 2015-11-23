@@ -15,15 +15,14 @@ namespace EasyOa.OpenApi.Controllers
     public class AlipayController : ApiController
     {
         [HttpPost]
-        public string DirectPay([FromBody]AliRequestModel aliRequestModel)
+        public object DirectPay(AliModelBase aliRequestModel)
         {
 
-            return "";
+            return aliRequestModel;
         }
         [HttpPost]
-        public Person Ma(Person person)
+        public Person M1(Person person)
         {
-
             return person;
         }
     }
