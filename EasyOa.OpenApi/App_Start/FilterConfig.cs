@@ -10,7 +10,7 @@ namespace EasyOa.OpenApi
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             //这是专门处理mvc异常的，webapi无效
-            filters.Add(new MyHandleErrorAttribute()); 
+            filters.Add(new MyHandleErrorAttribute());
             //这是专门处理webapi异常的
             GlobalConfiguration.Configuration.Filters.Add(new MyExceptionFilterAttribute());
             //这是检测参数是否为null的
