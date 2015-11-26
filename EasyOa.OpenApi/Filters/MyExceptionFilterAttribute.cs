@@ -17,11 +17,11 @@ namespace EasyOa.OpenApi.Filters
     {
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
-            //记录错误日志
+            //记录错误日志，过滤掉由于参数没有通过验证而抛出的异常
             if (!actionExecutedContext.Exception.GetType().Name.Contains("ParamsException"))
             {
                 LogHelper.ErrorLog(actionExecutedContext.Exception);
-                throw new SysException<ErrorCode.System>(ErrorCode.System.server_exception,
+                throw new SysException(ErrorCode.System.server_exception,
                                                          actionExecutedContext.Exception.Message);
             }
         }

@@ -24,7 +24,7 @@ namespace EasyOa.OpenApi
                 {
                     if (item.Value.Errors.Count > 0) valid_result.Add(item.Value.Errors[0].ErrorMessage);
                 }
-                throw new ParamsException<ErrorCode.General>(ErrorCode.General.params_valid_fault, valid_result);
+                throw new ParamsException(ErrorCode.General.params_valid_fault, valid_result);
             }
         }
 

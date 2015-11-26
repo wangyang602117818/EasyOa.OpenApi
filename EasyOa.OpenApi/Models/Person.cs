@@ -12,11 +12,11 @@ namespace EasyOa.OpenApi.Models
     public class Person
     {
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources))]
-        //[StringLength(5,MinimumLength = 5,ErrorMessageResourceName = "StringLength",ErrorMessageResourceType =typeof(Resources) )]
+        [StringLength(5, MinimumLength = 5, ErrorMessageResourceName = "StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Name { get; set; }
 
         //[Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources))]
-        //[Range(10, 100)]
+        [Range(10, 100, ErrorMessageResourceName = "Range", ErrorMessageResourceType = typeof(Resources))]
         public int? Age { get; set; }
     }
     public class Person1

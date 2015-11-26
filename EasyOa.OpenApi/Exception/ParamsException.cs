@@ -6,18 +6,21 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using EasyOa.Common;
+using EasyOa.OpenApi.Models;
+
 namespace EasyOa.OpenApi
 {
-    public class ParamsException<T> : HttpResponseException
+    public class ParamsException : HttpResponseException
     {
-        public ParamsException(T code, List<string> param_name, HttpStatusCode statusCode = HttpStatusCode.BadRequest)
+        public ParamsException(Enum code, List<string> param_name, HttpStatusCode statusCode = HttpStatusCode.BadRequest)
             : base(statusCode)
         {
-            var error = new
+            var error = new ResponseModel<string>()
                   {
                       url = HttpContext.Current.Request.Url.AbsoluteUri,
                       code = code,
-                      msg = code + "[" + string.Join(",", param_name).Trim(',') + "]",
+                      msg = code.ToString() + "[" + string.Join(",", param_name).Trim(',') + "]",
+                      result = ""
                   };
             Response.Content = new StringContent(JsonSerializerHelper.Serialize(error));
         }

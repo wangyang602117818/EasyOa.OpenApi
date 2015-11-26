@@ -12,9 +12,10 @@ namespace EasyOa.OpenApi.Models
     /// <typeparam name="T"></typeparam>
     public class ResponseModel<T>
     {
+        public string url { get; set; }
         public Enum code { get; set; }
-        public string msg { get { return code.ToString(); } }
+        public string msg { get; set; }
         public T result { get; set; }
     }
-   
+
 }

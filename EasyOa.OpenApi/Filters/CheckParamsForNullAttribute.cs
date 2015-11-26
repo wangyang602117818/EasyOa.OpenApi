@@ -19,12 +19,12 @@ namespace EasyOa.OpenApi
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-            //访问日志
+            //访问日志，遇到不合法的Json格式，参数也会是null
             LogHelper.InfoLog("请求:[" + actionContext.Request.RequestUri.AbsoluteUri + "],参数:" + JsonSerializerHelper.Serialize(actionContext.ActionArguments));
             List<string> valid_result = CheckParams(actionContext.ActionArguments);
             if (valid_result.Count > 0)
             {
-                throw new ParamsException<ErrorCode.General>(ErrorCode.General.invalid_params, valid_result);
+                throw new ParamsException(ErrorCode.General.invalid_params, valid_result);
             }
         }
         //传入请求参数，返回不合法的参数列表
