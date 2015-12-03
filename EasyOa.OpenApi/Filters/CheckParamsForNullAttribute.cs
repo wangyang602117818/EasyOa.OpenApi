@@ -8,6 +8,7 @@ using System.Web.Http.Filters;
 using EasyOa.Common;
 using EasyOa.Model;
 using EasyOa.OpenApi.Models;
+using ActionFilterAttribute = System.Web.Http.Filters.ActionFilterAttribute;
 
 namespace EasyOa.OpenApi
 {
@@ -17,17 +18,28 @@ namespace EasyOa.OpenApi
     [AttributeUsage(AttributeTargets.Method, Inherited = true)]
     public class CheckParamsForNullAttribute : ActionFilterAttribute
     {
+        /// <summary>
+        /// Action运行开始前
+        /// </summary>
+        /// <param name="actionContext"></param>
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
             //访问日志，遇到不合法的Json格式，参数也会是null
             LogHelper.InfoLog("请求:[" + actionContext.Request.RequestUri.AbsoluteUri + "],参数:" + JsonSerializerHelper.Serialize(actionContext.ActionArguments));
+
             List<string> valid_result = CheckParams(actionContext.ActionArguments);
+            
+            //IEnumerable<HttpFilter> filters = FilterProviders.Providers.GetFilters(actionContext.ActionDescriptor.ControllerDescriptor, actionContext.ActionDescriptor);
             if (valid_result.Count > 0)
             {
                 throw new ParamsException(ErrorCode.General.invalid_params, valid_result);
             }
         }
-        //传入请求参数，返回不合法的参数列表
+        /// <summary>
+        /// 传入请求参数，返回不合法的参数列表
+        /// </summary>
+        /// <param name="dictionary"></param>
+        /// <returns></returns>
         public List<string> CheckParams(Dictionary<string, object> dictionary)
         {
             List<string> invalid_params = new List<string>();
@@ -37,6 +49,10 @@ namespace EasyOa.OpenApi
             }
             return invalid_params;
         }
+        /// <summary>
+        /// Action方法运行结束后返回值
+        /// </summary>
+        /// <param name="actionExecutedContext"></param>
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
             if (actionExecutedContext.Response != null)
