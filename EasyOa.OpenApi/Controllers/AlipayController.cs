@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using EasyOa.Common.Alipay.DirectPay;
 using EasyOa.Common.Properties;
@@ -35,8 +36,7 @@ namespace EasyOa.OpenApi.Controllers
             [Range(10, 100, ErrorMessageResourceName = "Range", ErrorMessageResourceType = typeof(Resources))]
             int? age)
         {
-            ConfigurationFilterProvider actionDescriptor=new ConfigurationFilterProvider();
-            HttpFilterCollection filterCollection = Configuration.Filters;
+            
             
             return new Person() { Name = name, Age = age };
         }
