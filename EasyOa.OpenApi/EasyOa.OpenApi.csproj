@@ -126,6 +126,7 @@
     <Compile Include="Exception\SysException.cs" />
     <Compile Include="Filters\MyExceptionFilterAttribute.cs" />
     <Compile Include="Filters\MyHandleErrorAttribute.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
