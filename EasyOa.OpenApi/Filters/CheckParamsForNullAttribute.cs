@@ -8,7 +8,6 @@ using System.Web.Http.Filters;
 using EasyOa.Common;
 using EasyOa.Model;
 using EasyOa.OpenApi.Models;
-using ActionFilterAttribute = System.Web.Http.Filters.ActionFilterAttribute;
 
 namespace EasyOa.OpenApi
 {
