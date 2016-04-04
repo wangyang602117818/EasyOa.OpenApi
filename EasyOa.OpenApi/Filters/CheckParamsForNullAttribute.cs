@@ -8,7 +8,6 @@ using System.Web.Http.Filters;
 using EasyOa.Common;
 using EasyOa.Model;
 using EasyOa.OpenApi.Models;
-using ActionFilterAttribute = System.Web.Http.Filters.ActionFilterAttribute;
 
 namespace EasyOa.OpenApi
 {
@@ -58,9 +57,10 @@ namespace EasyOa.OpenApi
             if (actionExecutedContext.Response != null)
             {
                 var httpContext = (actionExecutedContext.Response.Content as ObjectContent).Value;
+                //返回日志
                 LogHelper.InfoLog("响应:" + JsonSerializerHelper.Serialize(httpContext));
             }
-            //返回日志
+            
             
         }
     }

@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AlipayController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Exception\SysException.cs" />
     <Compile Include="Filters\MyExceptionFilterAttribute.cs" />
     <Compile Include="Filters\MyHandleErrorAttribute.cs" />

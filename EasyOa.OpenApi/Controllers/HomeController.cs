@@ -20,6 +20,8 @@ namespace EasyOa.OpenApi.Controllers
             ActionDescriptor actionDescriptor = controller.FindAction(ControllerContext, "Index");
             IEnumerable<Filter> filters = FilterProviders.Providers.GetFilters(this.ControllerContext, actionDescriptor);
             
+            
+           
             return View();
         }
 

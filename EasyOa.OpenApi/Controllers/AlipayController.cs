@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -29,17 +30,16 @@ namespace EasyOa.OpenApi.Controllers
         {
             return person;
         }
-        [HttpGet]
+        [HttpPost]
         public Person M2(
-            [StringLength(5, MinimumLength = 5, ErrorMessageResourceName = "StringLength", ErrorMessageResourceType = typeof(Resources))]
+            [MinLength(3, ErrorMessage = "长度不够")]
             string name,
-            [Range(10, 100, ErrorMessageResourceName = "Range", ErrorMessageResourceType = typeof(Resources))]
+             [Range(10, 20, ErrorMessage = "范围错误")]
             int? age)
         {
-            
-            
             return new Person() { Name = name, Age = age };
         }
+
     }
 
    
