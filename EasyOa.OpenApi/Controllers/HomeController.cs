@@ -16,9 +16,8 @@ namespace EasyOa.OpenApi.Controllers
     {
         public ActionResult Index()
         {
-            ControllerDescriptor controller = new ReflectedAsyncControllerDescriptor(GetType());
-            ActionDescriptor actionDescriptor = controller.FindAction(ControllerContext, "Index");
-            IEnumerable<Filter> filters = FilterProviders.Providers.GetFilters(this.ControllerContext, actionDescriptor);
+            int a = 1, b = 0;
+            int c = a/b;
             
             
            
