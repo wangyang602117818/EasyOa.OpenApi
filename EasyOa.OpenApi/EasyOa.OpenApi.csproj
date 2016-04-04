@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -135,7 +136,6 @@
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Exception\ParamsException.cs" />
-    <Compile Include="Exception\ErrorCode.cs" />
     <Compile Include="Filters\CheckParamsForNullAttribute.cs" />
     <Compile Include="Filters\ValidateModelStateAttribute.cs" />
     <Compile Include="Global.asax.cs">
