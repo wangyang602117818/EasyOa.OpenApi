@@ -21,8 +21,7 @@ namespace EasyOa.OpenApi.Filters
             if (!actionExecutedContext.Exception.GetType().Name.Contains("ParamsException"))
             {
                 LogHelper.ErrorLog(actionExecutedContext.Exception);
-                throw new SysException(ErrorCode.System.server_exception,
-                                                         actionExecutedContext.Exception.Message);
+                throw new SysException(ErrorCode.System.server_exception, actionExecutedContext.Exception.Message);
             }
         }
     }
