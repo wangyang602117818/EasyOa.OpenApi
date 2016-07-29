@@ -60,8 +60,6 @@ namespace EasyOa.OpenApi
                 //返回日志
                 LogHelper.InfoLog("响应:" + JsonSerializerHelper.Serialize(httpContext));
             }
-            
-            
         }
     }
 }
